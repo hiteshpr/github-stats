@@ -1,0 +1,33 @@
+
+<div class="search-data-div">
+<div>
+<mat-form-field style="display: block;" appearance="fill">
+    <mat-label>Enter GitHub User Name</mat-label>
+    <input matInput [(ngModel)]="userName" (keyup.enter)="getUserData()">
+  </mat-form-field>
+  <button mat-raised-button (click)="getUserData()"> <mat-icon>search</mat-icon> Search</button>
+</div>
+
+
+<div *ngIf="showData" class="card-data">
+    <mat-card>
+        <mat-card-title-group>
+          <mat-card-title>{{ searchedUserData.login }}</mat-card-title>
+          <mat-card-subtitle>{{ searchedUserData.name }}</mat-card-subtitle>
+          <img mat-card-md-image src="{{ searchedUserData.avatar_url }}" >
+        </mat-card-title-group>
+        <mat-card-content>
+            <p> <b>Bio - </b> {{ searchedUserData.bio }} 
+            <p *ngIf="searchedUserData.blog">
+                <b>Blog - </b> <a href="{{ searchedUserData.blog }}">{{ searchedUserData.blog }}</a>
+            </p>
+            <p> <b>Public Repos - </b> {{ searchedUserData.public_repos }} </p>
+            <p> <b>Followers - </b> {{ searchedUserData.followers }} </p>
+            <p><b>Following - </b> {{ searchedUserData.following }} </p>
+        </mat-card-content>
+        <mat-card-footer>	
+            <mat-icon> location_on</mat-icon> {{ searchedUserData.location }}
+        </mat-card-footer>
+      </mat-card>
+</div>
+</div>

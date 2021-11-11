@@ -1,0 +1,26 @@
+<mat-table #table [dataSource]="tableData" >
+    <ng-container *ngFor="let column of displayedColumns" [cdkColumnDef]="column">
+      <mat-header-cell *cdkHeaderCellDef>{{ column }}</mat-header-cell>
+
+      <mat-cell *cdkCellDef="let element">
+          <ng-container *ngIf="column !== 'Action'">
+            {{ element[column] }}
+          </ng-container>
+          <ng-container *ngIf="column === 'Action'">
+            <a mat-button (click)="redirectToSearch(element.userName)">Go to Profile <mat-icon>launch</mat-icon> </a>
+          </ng-container>
+        </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+  <button mat-raised-button (click)="openDialogWithRef(alertBox)"> <mat-icon>delete</mat-icon> Clear Search History</button>
+
+  <ng-template #alertBox>
+    <p matDialogContent>Are you sure you want to delete search history?</p>
+    <mat-dialog-actions align="end">
+      <button mat-button matDialogClose (click)="clearStoreData()">Yes</button>
+      <button mat-button matDialogClose>Dismiss</button>
+    </mat-dialog-actions>
+  </ng-template>
