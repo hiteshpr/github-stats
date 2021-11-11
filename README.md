@@ -1,10 +1,39 @@
-# GithubInfo
+# Github Stats
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+Github Stats is a web application that shows the public profile of a GitHub user.  
 
-## Development server
+Data shown for a particular user - 
+<ul>
+    <li> GitHub user name</li>
+    <li> GitHub profile picture</li>
+    <li> GitHub profile bio</li>
+    <li> Number of public repos of the user on GitHub</li>
+    <li> Number of followers </li>
+    <li> Number of accounts user is following</li>
+    <li> Name of the user (optional)</li>
+    <li> Location of the user (optional)</li>
+</ul>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To search for a particular user's data, enter their GitHub user-name in the input box provided.
+
+## Technical stack
+
+The web-app is build using Angular 11.
+For styling [Angular Material](https://material.angular.io/) is used.  
+For storing the user's search history
+[Akita state management library](https://datorama.github.io/akita/) is being used .
+
+Data is being fetched from [GitHub public API](https://docs.github.com/en/rest/overview).
+
+
+## Demo video  
+
+## Development environment 
+
+Fork and Clone the repositry on your system.  
+Run `npm install` to install node-modules.   
+Run `ng serve` for a dev server. 
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -17,11 +46,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
