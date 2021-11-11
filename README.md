@@ -28,6 +28,10 @@ Data is being fetched from [GitHub public API](https://docs.github.com/en/rest/o
 
 ## Demo video  
 
+
+https://user-images.githubusercontent.com/19280178/141238135-e8874f22-55ea-4307-8558-de8127226ba7.mp4
+
+
 ## Development environment 
 
 Fork and Clone the repositry on your system.  
