@@ -1,22 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Store, StoreConfig } from '@datorama/akita';
-
-export interface SearchHistoryState {
-   key: string;
-}
-
-export function createInitialState(): SearchHistoryState {
-  return {
-    key: ''
-  };
-}
+import { EntityStore, StoreConfig } from '@datorama/akita';
+import { IGithubResponseData } from './search-history.model';
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'search-history' })
-export class SearchHistoryStore extends Store<SearchHistoryState> {
+export class SearchHistoryStore extends EntityStore<IGithubResponseData> {
 
   constructor() {
-    super(createInitialState());
+    super();
   }
 
 }
